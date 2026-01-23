@@ -1,0 +1,11 @@
+[
+  {
+    "applyTo": "index.html",
+    "headers": [
+      {
+        "name": "server",
+        "value": "CSE135 Server"
+      }
+    ]
+  }
+]
