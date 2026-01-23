@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <link rel="icon" href="/favicon.ico" type="image/x-icon">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Christian Serrato | Member Page</title>
+  <meta name="description" content="Personal member page for Christian Serrato (Math–CS @ UCSD).">
+
+  <style>
+    :root{
+      --paper: #fbfbf8;
+      --ink: #1f1f1f;
+      --muted: #4b4b4b;
+      --grid: rgba(30, 90, 180, 0.12);
+      --grid-strong: rgba(30, 90, 180, 0.18);
+      --accent: #c63b3b;
+      --card: rgba(255,255,255,0.72);
+      --shadow: rgba(0,0,0,0.08);
+      --border: rgba(0,0,0,0.22);
+    }
+
+    body{
+      margin: 0;
+      color: var(--ink);
+      background:
+        linear-gradient(to right, var(--grid) 1px, transparent 1px),
+        linear-gradient(to bottom, var(--grid) 1px, transparent 1px),
+        linear-gradient(to right, var(--grid-strong) 2px, transparent 2px),
+        linear-gradient(to bottom, var(--grid-strong) 2px, transparent 2px),
+        var(--paper);
+      background-size: 24px 24px, 24px 24px, 120px 120px, 120px 120px, auto;
+      font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
+      line-height: 1.5;
+    }
+
+    h1, h2, .tagline{
+      font-family: "Comic Sans MS", "Bradley Hand", "Marker Felt", "Segoe Print", cursive;
+      letter-spacing: 0.2px;
+    }
+
+    a{
+      color: inherit;
+      text-decoration-thickness: 2px;
+      text-underline-offset: 3px;
+    }
+
+    a:hover{
+      color: var(--accent);
+    }
+
+    .wrap{
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 28px 16px 48px;
+    }
+
+    .backlink{
+      display: inline-block;
+      margin-bottom: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    header{
+      display: grid;
+      grid-template-columns: 140px 1fr;
+      gap: 16px;
+      align-items: center;
+      margin-bottom: 18px;
+    }
+
+    .portrait{
+      width: 140px;
+      height: 140px;
+      border: 2px solid var(--border);
+      border-radius: 10px;
+      background: rgba(255,255,255,0.7);
+      box-shadow: 0 8px 18px var(--shadow);
+      overflow: hidden;
+      transform: rotate(-1deg);
+    }
+
+    .portrait img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+
+    .titleblock{
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 22px var(--shadow);
+      transform: rotate(0.4deg);
+    }
+
+    h1{
+      margin: 0 0 6px;
+      font-size: 2.1rem;
+    }
+
+    .tagline{
+      margin: 0;
+      color: var(--muted);
+      font-size: 1.15rem;
+    }
+
+    main{
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 14px;
+    }
+
+    .card{
+      background: var(--card);
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 14px 16px;
+      box-shadow: 0 10px 22px var(--shadow);
+    }
+
+    .card:nth-child(odd){
+      transform: rotate(-0.25deg);
+    }
+
+    .card:nth-child(even){
+      transform: rotate(0.25deg);
+    }
+
+    h2{
+      margin: 0 0 10px;
+      font-size: 1.4rem;
+    }
+
+    .facts{
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0,1fr));
+      gap: 8px 14px;
+      padding-left: 18px;
+      margin: 8px 0 0;
+    }
+
+    .pill{
+      display: inline-block;
+      padding: 2px 10px;
+      border: 2px solid var(--border);
+      border-radius: 999px;
+      background: rgba(255,255,255,0.7);
+      margin-right: 6px;
+      font-size: 0.95rem;
+    }
+
+    .tiny{
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    footer{
+      margin-top: 16px;
+      text-align: center;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (min-width: 860px){
+      main{
+        grid-template-columns: 1fr 1fr;
+      }
+      .span2{
+        grid-column: 1 / -1;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce){
+      *{
+        scroll-behavior: auto;
+        transition: none;
+      }
+      .card, .portrait, .titleblock{
+        transform: none;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <a class="backlink" href="../index.html">← Back to the main page</a>
+
+    <header>
+      <div class="portrait">
+        <img src="../assets/meandcat.png" alt="Christian Serrato with his cat">
+      </div>
+
+      <div class="titleblock">
+        <h1>Christian Serrato</h1>
+        <p class="tagline">Math–CS @ UC San Diego ✍️</p>
+        <p class="tiny">
+          This page is my notebook-style corner of the site — a small snapshot of who I am.
+        </p>
+      </div>
+    </header>
+
+    <main>
+      <section class="card">
+        <h2>Quick Facts</h2>
+        <ul class="facts">
+          <li><span class="pill">Major</span> Math–Computer Science</li>
+          <li><span class="pill">School</span> UC San Diego</li>
+          <li><span class="pill">I like</span> building useful apps</li>
+          <li><span class="pill">Also</span> gym + photography</li>
+        </ul>
+      </section>
+
+      <section class="card">
+        <h2>Favorite Album</h2>
+        <p>
+          <strong>Awaken, My Love!</strong> — Childish Gambino
+        </p>
+        <p class="tiny">
+          Great for late-night coding, long drives, and zoning in.
+        </p>
+      </section>
+
+      <section class="card span2">
+        <h2>About Me</h2>
+        <p>
+          I’m a Math–CS student at UCSD who likes building things that feel clean, useful,
+          and intentional. Outside of class, I spend a lot of time at the gym, working on
+          side projects, and taking photos when I travel. I’m big on small improvements and
+          staying consistent.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <p>Thanks for stopping by 🙂</p>
+    </footer>
+  </div>
+</body>
+</html>
