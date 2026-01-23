@@ -2,62 +2,137 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CSE 135 — Winter 2026 :D :D :D</title>
+  <title>CSE 135 — Winter 2026</title>
+
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #d3d3d3;
+      font-family: Georgia, "Times New Roman", serif;
+      color: #000;
+    }
+
+    .container {
+      max-width: 950px;
+      margin: 30px auto;
+      padding: 0 20px;
+    }
+
+    h1 {
+      font-size: 42px;
+      margin-bottom: 0;
+    }
+
+    h2 {
+      margin-top: 4px;
+      font-size: 20px;
+      font-weight: bold;
+    }
+
+    hr {
+      margin: 14px 0;
+      border: none;
+      border-top: 2px solid #000;
+    }
+
+    .layout {
+      display: grid;
+      grid-template-columns: 1fr 280px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .section-title {
+      font-size: 24px;
+      font-weight: bold;
+      margin-bottom: 6px;
+    }
+
+    .bar {
+      background: #c0c0c0;
+      padding: 10px 14px;
+      margin-bottom: 18px;
+    }
+
+    .bar ul {
+      margin: 0;
+      padding-left: 20px;
+    }
+
+    .bar li {
+      margin: 4px 0;
+    }
+
+    a {
+      color: #0000ee;
+    }
+
+    a:visited {
+      color: #551a8b;
+    }
+
+    .team-box {
+      background: #bcbcbc;
+      padding: 14px;
+      font-size: 14px;
+    }
+
+    .team-box h3 {
+      margin-top: 0;
+      font-size: 18px;
+    }
+
+    footer {
+      margin-top: 24px;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    @media (max-width: 800px) {
+      .layout {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 
 <body>
-  <h1>CSE 135 — Winter 2026 :D :D :D</h1>
+  <div class="container">
+    <h1>CSE 135</h1>
+    <h2>Winter 2026</h2>
 
-  <p><strong>Team:</strong> <a href="#">Chris</a></p>
+    <hr>
 
-  <hr />
+    <div class="layout">
+      <!-- LEFT CONTENT -->
+      <div>
+        <div class="section-title">Homework 1</div>
+        <div class="bar">
+          <ul>
+            <li><a href="/members/christianserrato.html">Member Page — Christian Serrato</a></li>
+            <li><a href="/hello.php">PHP</a></li>
+            <li><a href="/report.html">Analytics (GoAccess)</a></li>
+          </ul>
+        </div>
 
-  <h2>Homework 1</h2>
-  <ul>
-    <li>
-      <a href="/members/christianserrato.html">
-        Member Page — Christian Serrato
-      </a>
-    </li>
+        <footer>CSE 135 · Winter 2026</footer>
+      </div>
 
-    <li>
-      <a href="/hello.php">
-        PHP Lives (phpinfo)
-      </a>
-    </li>
-
-    <li>
-      <a href="/report.html">
-        GoAccess Report
-      </a>
-    </li>
-
-    <li>
-      <a href="#">
-        Homework 1 Writeup
-      </a> (placeholder)
-    </li>
-
-    <li>
-      <a href="#">
-        Additional HW1 Link
-      </a> (placeholder)
-    </li>
-  </ul>
-
-  <hr />
-
-  <h2>About</h2>
-  <p>
-    Hello! This website is used to host my CSE 135 homework assignments :D
-  </p>
-
-  <hr />
-
-  <footer>
-    <p>CSE 135 · Winter 2026</p>
-  </footer>
+      <!-- RIGHT TEAM BOX -->
+      <aside class="team-box">
+        <h3>Team</h3>
+        <p>
+          An example team filled with real people doing real things.
+          It doesn’t get more real than this!
+        </p>
+        <strong>Team Members</strong>
+        <ul>
+          <li><a href="/members/christianserrato.html">Chris</a></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
 </body>
 </html>
 
