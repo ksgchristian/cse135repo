@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>Echo Test Form — Go</title>
+</head>
+<body>
+
+<h1>Echo Test Form (Go)</h1>
+
+<noscript>
+  <p><strong>JavaScript disabled:</strong> form will submit using GET only.</p>
+</noscript>
+
+<form id="echoForm" action="/cgi-bin/hw2/go/echo-go" method="get">
+  <label>
+    HTTP Method:
+    <select id="method">
+      <option value="GET">GET</option>
+      <option value="POST">POST</option>
+      <option value="PUT">PUT</option>
+      <option value="DELETE">DELETE</option>
+    </select>
+  </label>
+  <br><br>
+
+  <label>
+    Encoding:
+    <select id="encoding">
+      <option value="application/x-www-form-urlencoded">x-www-form-urlencoded</option>
+      <option value="application/json">application/json</option>
+    </select>
+  </label>
+  <br><br>
+
+  <label>
+    Message:
+    <input type="text" id="message" name="message" value="Hello">
+  </label>
+  <br><br>
+
+  <button type="submit">Send</button>
+</form>
+
+<pre id="out"></pre>
+
+<script>
+document.getElementById("echoForm").addEventListener("submit", async function (e) {
+  e.preventDefault();
+
+  const method = document.getElementById("method").value;
+  const encoding = document.getElementById("encoding").value;
+  const message = document.getElementById("message").value;
+
+  if (method === "GET") {
+    const url = "/cgi-bin/hw2/go/echo-go?message=" + encodeURIComponent(message);
+    window.location.href = url;
+    return;
+  }
+
+  let body;
+  const headers = {};
+
+  if (encoding === "application/json") {
+    body = JSON.stringify({ message });
+    headers["Content-Type"] = "application/json";
+  } else {
+    body = new URLSearchParams({ message }).toString();
+    headers["Content-Type"] = "application/x-www-form-urlencoded";
+  }
+
+  const resp = await fetch("/cgi-bin/hw2/go/echo-go", {
+    method,
+    headers,
+    body
+  });
+
+  document.getElementById("out").textContent = await resp.text();
+});
+</script>
+
+</body>
+</html>
